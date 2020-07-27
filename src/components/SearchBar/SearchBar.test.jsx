@@ -4,8 +4,28 @@ import SearchBar from './SearchBar';
 
 describe('SearchBar component', () => {
   let wrapper;
-  const handleChange = jest.fn();
+  let handleChange;
+  let handleSubmit;
+
   beforeEach(() => {
-    wrapper = shallow(<SearchBar onChange={handleChange} />);
+    handleChange = jest.fn();
+    handleSubmit = jest.fn();
+    wrapper = shallow(<SearchBar 
+      onChange={handleChange}
+      onSubmit={handleSubmit} />);
+  });
+
+  it('needs to have an input', () => {
+    expect(wrapper.find('input').toHaveLength(1));
+  });
+
+  it('needs to have a working onChange function', () => {
+    wrapper.find('input[name="searchQuery"]').simulate('change');
+    expect(handleChange).toHaveBeenCalledTimes(1);
+  });
+  
+  it('invokes the onSubmit prop when we click submit', () => {
+    wrapper.find('form').simulate('submit');
+    expect(handleSubmit).toHaveBeenCalledTimes(1);
   });
 });
