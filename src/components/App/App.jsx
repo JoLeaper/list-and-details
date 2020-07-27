@@ -4,7 +4,11 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 export default function App() {
   return (
     <Router>
-      <Route path="/" />
+      <Switch>
+        <Route exact path="/" component={ListPage}/>
+        <Route exact path="/:id" component={DetailPage}/>
+      </Switch>
+
     </Router>
   );
 }
