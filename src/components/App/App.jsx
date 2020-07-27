@@ -5,7 +5,7 @@ export default function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/" component={ListPage}/>
+        <Route exact path="/" component={MainContainer}/>
         <Route exact path="/:id" component={DetailPage}/>
       </Switch>
 
