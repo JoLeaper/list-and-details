@@ -8,11 +8,12 @@ const MainContainer = () => {
     characters, 
     searchQuery, 
     handleChange, 
-    handleSubmit } = useCharacters();
+    handleSubmit,
+    handlePageChange } = useCharacters();
 
   return (
     <div>
-      <SearchBar handleChange={handleChange} handleSubmit={handleSubmit} searchQuery={searchQuery}/>
+      <SearchBar handlePageChange={handlePageChange} handleChange={handleChange} handleSubmit={handleSubmit} searchQuery={searchQuery}/>
       <ListPage characters={characters} />    
     </div>
   );

@@ -1,15 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import fetchNewSearch from '../../services/fetchNewSearch';
+import { useSingleCharacter } from '../../hooks/useSingleCharacterHook';
 
 const DetailPage = () => {
-  const { id } = useParams();
-  const [characterInfo, setCharacterInfo] = useState({});
-
-  useEffect(() => {
-    fetchNewSearch(id)
-      .then(character => setCharacterInfo(character));
-  }, []);
+  const characterInfo  = useSingleCharacter();
 
   // const { photoUrl, ...characterInfo } = characterInfo;
   const { name, photoUrl, gender, eye, hair, skin, profession, position, affiliation } = characterInfo;

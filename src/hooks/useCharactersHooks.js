@@ -5,11 +5,17 @@ import  fetchNewSearch  from '../services/fetchNewSearch';
 export const useCharacters = () => {
   const [characters, setCharacters] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
+  const [pageNumber, setPageNumber] = useState(1);
 
   useEffect(() => {
     getAllCharacters()
       .then(initialCharacters => setCharacters(initialCharacters));
   }, []);
+
+  useEffect(() => {
+    getAllCharacters(pageNumber)
+      .then(pagedCharacters => setCharacters(pagedCharacters));
+  }, [pageNumber]);
 
   const handleChange = ({ target }) => {
     switch(target.name) {
@@ -31,11 +37,15 @@ export const useCharacters = () => {
   
   };
 
+  const handlePageChange = ({ target }) => {
+    setPageNumber(pageNumber + Number(target.value));
+  };
   return {
     characters,
     searchQuery,
     handleChange,
-    handleSubmit
+    handleSubmit,
+    handlePageChange
   };
 };
 
