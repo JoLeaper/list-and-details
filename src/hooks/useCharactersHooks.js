@@ -38,6 +38,8 @@ export const useCharacters = () => {
   };
 
   const handlePageChange = ({ target }) => {
+    if(pageNumber === 1 && Number(target.value) === -1) return;
+    if(characters[0] === undefined && Number(target.value) === 1) return;
     setPageNumber(pageNumber + Number(target.value));
   };
   return {
