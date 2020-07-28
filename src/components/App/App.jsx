@@ -7,8 +7,8 @@ export default function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/" component={MainContainer}/>
-        <Route exact path="/:id" component={DetailPage}/>
+        <Route exact path="/" component={ MainContainer }/>
+        <Route path="/:id" component={ DetailPage }/>
       </Switch>
     </Router>
   );
