@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'React';
+import { useState, useEffect } from 'react';
 import  getAllCharacters  from '../services/getAllCharacters';
 import  fetchNewSearch  from '../services/fetchNewSearch';
 
