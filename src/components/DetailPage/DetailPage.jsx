@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import fetchNewSearch from '../../services/fetchNewSearch';
 
 const DetailPage = () => {
@@ -12,15 +11,21 @@ const DetailPage = () => {
       .then(character => setCharacterInfo(character));
   }, []);
 
+  // const { photoUrl, ...characterInfo } = characterInfo;
+  const { name, photoUrl, gender, eye, hair, skin, profession, position, affiliation } = characterInfo;
   return (
     <div>
-      <p>{characterInfo.name}</p>
+      <img src={photoUrl} />
+      <p>Name: {name}</p>
+      {gender && <p>Gender: {gender}</p>}
+      {eye && <p>Eye Color: {eye}</p> }
+      {hair && <p>Hair Color: {hair}</p> }
+      {skin && <p>Skin Color: {skin} </p>}
+      {profession && <p>Profession: {profession} </p>}
+      {position && <p>Position: {position} </p>}
+      {affiliation && <p>Affiliation: {affiliation} </p>}
     </div>
   );
-};
-
-DetailPage.propTypes = {
-
 };
 
 export default DetailPage;

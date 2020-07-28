@@ -8,6 +8,7 @@ const ListPage = ({ characters }) => {
       <ul>
         {characters.map(character => (
           <li key={character._id}>
+            <img src={character.photoUrl} />
             <Link to={`/${character._id}`}>{character.name}</Link>
           </li>
         ))}
