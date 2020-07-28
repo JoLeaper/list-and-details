@@ -18,6 +18,7 @@ const ListPage = ({ characters }) => {
 };
 
 ListPage.propTypes = {
+  characters: PropTypes.array
 
 };
 
