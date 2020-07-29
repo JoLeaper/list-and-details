@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import fetchNewSearch from '../../services/fetchNewSearch';
+import React from 'react';
 import { useSingleCharacter } from '../../hooks/useSingleCharacterHook';
 
 const DetailPage = () => {
