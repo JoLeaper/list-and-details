@@ -42,6 +42,7 @@ export const useCharacters = () => {
     if(characters[0] === undefined && Number(target.value) === 1) return;
     setPageNumber(pageNumber + Number(target.value));
   };
+  
   return {
     characters,
     searchQuery,

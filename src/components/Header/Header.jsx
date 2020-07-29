@@ -1,18 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import styles from './Header.css';
 
 function Header() {
   return (
-    <div>
-      <Link to={'/'}>Home</Link>
+    <div className={styles.Header}>
+      <Link to={'/'}><h1>Home</h1></Link>
     </div>
   );
 }
-
-Header.propTypes = {
-
-};
 
 export default Header;
 
